@@ -1,7 +1,11 @@
 function Invoke-Script{
     param(
+        [Parameter(ValueFromPipeline=$true)]
+        [ValidateNotNullOrEmpty()]
         [String[]]$ComputerNames,
+        [ValidateNotNullOrEmpty()]
         [pscredential]$Cred,
+        [ValidateNotNullOrEmpty()]
         [ScriptBlock]$ScriptBlock
     )
     foreach($ComputerName in $ComputerNames){
@@ -18,3 +22,6 @@ function Invoke-Script{
         }
     }
 }
+
+$ScriptBlock = {
+    }
