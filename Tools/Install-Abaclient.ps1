@@ -6,7 +6,7 @@ function Install-AbaClient{
     foreach($ComputerName in $ComputerNames){
         try {
             Invoke-Command -ComputerName $ComputerName -Credential $Cred -Authentication Credssp -ScriptBlock {choco upgrade abaclient -y;`
-                Copy-Item "\\pdnas\INSTALL\Install\Abacus\AbaClient 2022\AbaClient.abalink" "C:\Program Files (x86)\Abacus\AbaClient\bin\";`                                                                                                 $shell = New-Object -ComObject WScript.Shell;`
+                Copy-Item "\\pdnas\INSTALL\Install\Abacus\AbaClient 2022\AbaClient.abalink" "C:\Program Files (x86)\Abacus\AbaClient\bin\";`
                 $shell = New-Object -ComObject WScript.Shell;`
                 $shortcut = $shell.CreateShortcut("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\AbaClient.lnk");`
                    $shortcut.TargetPath = "C:\Program Files (x86)\Abacus\AbaClient\bin\AbaClient.abalink";`
@@ -21,5 +21,5 @@ function Install-AbaClient{
     }
 }
 $Cred = Get-Credential
-$ComputerNames  = "PDVM-2"
+$ComputerNames  = "PDVM-9.profidata.com","PDVM-10.profidata.com","PDVM-11.profidata.com","PDVM-12.profidata.com"
 Install-AbaClient -Cred $Cred -ComputerNames $ComputerNames
