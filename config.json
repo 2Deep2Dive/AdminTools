@@ -1,0 +1,9 @@
+{
+    "OracleClient":{
+       "Url":"http://itnexus/repository/Resources/Oracle_Clients/",
+       "name": "Oracle_client_",
+       "version": "193",
+        "Format": ".7z"
+    }
+
+}
