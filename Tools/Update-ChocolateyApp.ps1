@@ -37,6 +37,6 @@ function Update-ChocolateyApp{
 }
 
 $AppName = "'chocolatey-license' 'chocolatey' 'chocolatey-agent' 'chocolatey.extension' 'chocolateygui' 'chocolateygui.extension'"
-$Cred = (New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList  'profidata\it-support', (ConvertTo-SecureString -String 'Profidata$2020' -AsPlainText -Force))
+$Cred =  Get-Credential -Credential 'profidata\it-support'
 
 Update-ChocolateyApp -Cred $Cred -AppName $AppName

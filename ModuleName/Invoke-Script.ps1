@@ -45,5 +45,5 @@ $ScriptBlock = {
         }
     }
 }
-$Cred = (New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList  'profidata\dscadmin', (ConvertTo-SecureString -String 'Profi4Ever$2020' -AsPlainText -Force))
+$Cred = Get-Credential -Credential 'profidata\dscadmin'
 Invoke-Script -ComputerNames $OnlineServers  -Cred $Cred -ScriptBlock $ScriptBlock

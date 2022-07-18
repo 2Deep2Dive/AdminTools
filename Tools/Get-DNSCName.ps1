@@ -9,7 +9,7 @@ function Get-DNSCName{
 }
 
 #$cred = Get-Credential -UserName "profidata\administrator"
-$Cred = (New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList  'profidata\administrator', (ConvertTo-SecureString -String 'Move2Urdorf%2' -AsPlainText -Force))
+$Cred = $Cred = Get-Credential -Credential "profidata\Administrator"
 $ZoneName = "profidatagroup.com"
 $ComputerName = "pddc116.profidata.com"
 
