@@ -1,10 +1,10 @@
 #Cleanup directores from xEmployees
-$TransferFoldersList = ls -Path \\pdfs\transfer | select -ExpandProperty Name
-$UserWorkFoldersList = ls -Path \\pdfs\UserWork | select -ExpandProperty Name
-$DisabledADUsersList =  Get-ADUser -Filter * -SearchBase "OU=Disabled Users,DC=profidata,DC=com" | select -ExpandProperty SamAccountName
+$TransferFoldersList = Get-ChildItem -Path \\pdfs\transfer | Select-Object -ExpandProperty Name
+$UserWorkFoldersList = Get-ChildItem -Path \\pdfs\UserWork | Select-Object -ExpandProperty Name
+$DisabledADUsersList =  Get-ADUser -Filter * -SearchBase "OU=Disabled Users,DC=profidata,DC=com" | Select-Object -ExpandProperty SamAccountName
 
-$TrasferFoldersToDelete = $DisabledADUsersList | ?{$TransferFoldersList -contains $_}
-$UserWorkFoldersToDelete = $DisabledADUsersList | ?{$UserWorkFoldersList -contains $_}
+$TrasferFoldersToDelete = $DisabledADUsersList | Where-Object{$TransferFoldersList -contains $_}
+$UserWorkFoldersToDelete = $DisabledADUsersList | Where-Object{$UserWorkFoldersList -contains $_}
 
 Write-Host "Transfer Folder/s to be deleted!!" -ForegroundColor Red
 Write-Host $TransferFoldersToDelete -ForegroundColor Yellow
