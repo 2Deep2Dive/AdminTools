@@ -9,9 +9,9 @@ foreach($ComputerName in $ComputerNames ){
 		        ForEach ($User in $Users)
 		        {
 			        $UserPSRepoXMLPath = "c:\Users\$User\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\"
-			        IF ((Test-Path $UserPSRepoXMLPath))
+			        IF ((Test-Path $UserPSRepoXMLPath -ErrorAction stop))
 			        {
-                        Copy-Item -Path "\\profidata.com\SYSVOL\profidata.com\scripts\PSRepositories.xml" -Destination "c:\Users\$User\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\" -Force -Verbose
+                        Copy-Item -Path "\\profidata.com\SYSVOL\profidata.com\scripts\PSRepositories.xml" -Destination "c:\Users\$User\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\" -Force -Verbose -ErrorAction Stop
                         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 			        }
 		        }
