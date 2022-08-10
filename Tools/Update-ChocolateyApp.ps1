@@ -36,7 +36,7 @@ function Update-ChocolateyApp{
     }
 }
 
-$AppName = "'chocolatey-license' 'chocolatey' 'chocolatey-agent' 'chocolatey.extension' 'chocolateygui' 'chocolateygui.extension'"
+$AppName = "'chocolatey-license' 'chocolatey' 'chocolatey-agent' 'chocolatey.extension' 'chocolateygui' 'chocolateygui.extension' 'chocolatey-compatibility.extension' 'chocolatey-core.extension'"
 $Cred =  Get-Credential -Credential 'profidata\it-support'
 
 Update-ChocolateyApp -Cred $Cred -AppName $AppName
