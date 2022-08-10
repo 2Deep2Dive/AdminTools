@@ -10,8 +10,8 @@ function Install-Chocolaty{
                 <# if(!(Test-Path -Path "$env:ProgramData\Chocolatey")){
                     HOSTNAME;
                     Write-host "Choco not Installed" -ForegroundColor red
-                 #>    #[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('http://chocorepo.profidatagroup.com/repository/choco-install/PDChocoInstall.ps1'))
-                    
+                 #>    #[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('http://chocorepo.profidatagroup.com/repository/choco-install/PDChocoInstall.ps1'))
+
 
                 #}
                 <# else {
