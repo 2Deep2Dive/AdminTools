@@ -1,9 +1,9 @@
 
 
 #$VMNames = Get-Content -Path "C:\Users\elm\Documents\checkMK_hosts_list.csv"
-$VMNames =  "PDEAMISVDB08"
+$VMNames =  ""
 $Destination = "$($ENV:PUBLIC)\Downloads"
-$Agent = "check-mk-agent-2.1.0p9.msi"
+$Agent = "check-mk-agent-2.1.0p12.msi"
 $Uri = "http://itnexus/repository/Resources/CheckMK/$Agent"
 $Cred = Get-Credential -Credential profidata\administrator
 
