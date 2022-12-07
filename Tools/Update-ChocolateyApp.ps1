@@ -26,7 +26,7 @@ function Update-ChocolateyApp{
                 $ChocoVersion = choco
                 if($ChocoVersion[0] -like "*Business*"){
                     Write-host "Ugrading $AppName" -ForegroundColor red
-                    choco upgrade $AppName -y --no-progress
+                    choco upgrade $AppName -y --no-progress --force --source="'http://chocorepo.profidatagroup.com/repository/choco-hosted/'"
                 }
             } -AsJob
         }
@@ -36,7 +36,7 @@ function Update-ChocolateyApp{
     }
 }
 
-$AppName = "'chocolatey-license' 'chocolatey' 'chocolatey-agent' 'chocolatey.extension' 'chocolateygui' 'chocolateygui.extension' 'chocolatey-compatibility.extension' 'chocolatey-core.extension'"
+$AppName = 'chocolateygui.extension' 'chocolateygui' 'chocolatey-agent' 'chocolatey.extension' 'chocolatey-license' 'chocolatey'
 $Cred =  Get-Credential -Credential 'profidata\it-support'
 
 Update-ChocolateyApp -Cred $Cred -AppName $AppName
