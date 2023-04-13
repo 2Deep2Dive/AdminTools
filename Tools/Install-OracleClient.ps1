@@ -22,9 +22,9 @@ function Install-OracleClient {
     try {
         #Download zip file
         $Destination =  (($DownloadPath)+('\')+(($config.OracleClient.name)+($config.OracleClient.version)+($config.OracleClient.Format)))
-        #if(((Invoke-WebRequest -uri $Url -UseBasicParsing -DisableKeepAlive).StatusCode) -eq "200"){
-        #    #Start-BitsTransfer -Source $Url -Destination $Destination -ErrorAction Stop -Verbose
-        #}
+        if(((Invoke-WebRequest -uri $Url -UseBasicParsing -DisableKeepAlive).StatusCode) -eq "200"){
+            Start-BitsTransfer -Source $Url -Destination $Destination -ErrorAction Stop -Verbose
+        }
     }
     catch {
         Write-Error "Failed to download file"
