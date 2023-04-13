@@ -1,5 +1,5 @@
 
-$Sources =  "http://chocorepo.profidatagroup.com/repository/choco-prod/"
+$Sources =  "http://chocorepo.profidatagroup.com/repository/choco-test/"
 $APIKey = "c3b834a7-9f77-34da-b889-ee79c708c6e5"
 
 
