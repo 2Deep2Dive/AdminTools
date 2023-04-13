@@ -21,5 +21,5 @@ function Install-AbaClient{
     }
 }
 $Cred = Get-Credential
-$ComputerNames  = "PDVM-9.profidata.com","PDVM-10.profidata.com","PDVM-11.profidata.com","PDVM-12.profidata.com"
+$ComputerNames  = ""
 Install-AbaClient -Cred $Cred -ComputerNames $ComputerNames
