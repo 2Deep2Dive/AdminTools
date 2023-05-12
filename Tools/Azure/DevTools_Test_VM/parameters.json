@@ -1,0 +1,101 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "switzerlandnorth"
+        },
+        "networkInterfaceName1": {
+            "value": "pdaitest_vNIC"
+        },
+        "networkSecurityGroupName": {
+            "value": "pdaitest-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "PDDEVTols-snet"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/68f1866e-8d43-4f1c-8f52-6ebd540d8b02/resourceGroups/PDNET/providers/Microsoft.Network/virtualNetworks/PDVPNNET"
+        },
+        "virtualMachineName": {
+            "value": "pdaitest"
+        },
+        "virtualMachineName1": {
+            "value": "pdaitest"
+        },
+        "virtualMachineComputerName1": {
+            "value": "pdaitest"
+        },
+        "virtualMachineRG": {
+            "value": "PDDEVTools"
+        },
+        "osDiskType": {
+            "value": "StandardSSD_LRS"
+        },
+        "diskEncryptionSetId": {
+            "value": "/subscriptions/68f1866e-8d43-4f1c-8f52-6ebd540d8b02/resourceGroups/PDNET/providers/Microsoft.Compute/diskEncryptionSets/PDDESKey"
+        },
+        "osDiskDeleteOption": {
+            "value": "Delete"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B2s"
+        },
+        "nicDeleteOption": {
+            "value": "Delete"
+        },
+        "adminUsername": {
+            "value": "devtoolsadmin"
+        },
+        "adminPassword": {
+            "value": "Profidata-2020"
+        },
+        "securityType": {
+            "value": "TrustedLaunch"
+        },
+        "secureBoot": {
+            "value": true
+        },
+        "vTPM": {
+            "value": true
+        },
+        "virtualMachine1Zone": {
+            "value": "1"
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "20:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "W. Europe Standard Time"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownNotificationLocale": {
+            "value": "en"
+        },
+        "autoShutdownNotificationEmail": {
+            "value": "mohamed.eliwa@profidata.com"
+        }
+    }
+}
