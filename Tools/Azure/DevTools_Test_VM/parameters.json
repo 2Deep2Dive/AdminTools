@@ -25,6 +25,20 @@
                         "destinationAddressPrefix": "*",
                         "destinationPortRange": "22"
                     }
+                },
+                {
+                    "name": "PING",
+                    "properties": {
+                        "provisioningState": "Succeeded",
+                        "protocol": "TCP",
+                        "sourcePortRange": "*",
+                        "destinationPortRange": "7",
+                        "sourceAddressPrefix": "*",
+                        "destinationAddressPrefix": "*",
+                        "access": "Allow",
+                        "priority": 310,
+                        "direction": "Inbound"
+                    }
                 }
             ]
         },
