@@ -6,7 +6,7 @@ function Install-AbaClient{
     foreach($ComputerName in $ComputerNames){
         try {
             Invoke-Command -ComputerName $ComputerName -Credential $Cred -Authentication Credssp -ScriptBlock {choco upgrade abaclient -y;`
-                Copy-Item "\\pdnas\INSTALL\Install\Abacus\AbaClient 2022\AbaClient.abalink" "C:\Program Files (x86)\Abacus\AbaClient\bin\";`
+                Copy-Item "\\pdnas\INSTALL\Install\Abacus\*\AbaClient.abalink" "C:\Program Files (x86)\Abacus\AbaClient\bin\";`
                 $shell = New-Object -ComObject WScript.Shell;`
                 $shortcut = $shell.CreateShortcut("C:\ProgramData\Microsoft\Windows\Start Menu\Programs\AbaClient.lnk");`
                    $shortcut.TargetPath = "C:\Program Files (x86)\Abacus\AbaClient\bin\AbaClient.abalink";`
