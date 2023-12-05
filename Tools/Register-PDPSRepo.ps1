@@ -1,5 +1,5 @@
 $Cred = Get-Credential -Credential "profidata\Administrator"
-$ComputerNames = "PDSCVMM02.profidata.com"
+$ComputerNames = ""
 foreach($ComputerName in $ComputerNames ){
     if((Test-Connection -ComputerName $ComputerName  -Count 1 -ErrorAction SilentlyContinue)){
 	    Write-Warning "Invoking remote command on $ComputerName"
