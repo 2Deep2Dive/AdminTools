@@ -1,0 +1,1 @@
+foreach($i in $x){Write-Output "$i.Parent" | Out-File -FilePath C:\Users\elm\Desktop\git_repos_remote_locations.txt -Append; Set-location -Path $i.Parent; git remote -v | Out-File -FilePath C:\Users\elm\Desktop\git_repos_remote_locations.txt  -Append}
